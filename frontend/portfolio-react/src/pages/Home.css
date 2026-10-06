@@ -1,0 +1,71 @@
+.home {
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  margin-left: 15rem;
+  padding: 4rem 2rem;
+}
+
+.foto-perfil {
+  border: #0bd800 solid 0.3rem;
+  width: 25rem;
+  height: 25rem;
+  margin-right: 5rem;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.foto-perfil img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.home-content {
+  max-width: 900px;
+}
+
+.home-content .greeting {
+  color: #0bd800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.home-content h1 {
+  font-size: 5rem;
+  margin-bottom: 1rem;
+}
+
+.home-content h2 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #bdbdbd;
+  margin-bottom: 2rem;
+}
+
+.home-content .description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #a0a0a0;
+  line-height: 1.7;
+  font-size: 1.1rem;
+}
+
+.home-buttons {
+  display: flex;
+  gap: 5rem;
+  margin-top: 2rem;
+}
+
+.home-buttons a {
+  padding: 0.8rem 1.5rem;
+  border: 2px solid #0bd800;
+  color: #0bd800;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.home-buttons a:hover {
+  background-color: #0bd800;
+  color: #070707;
+}

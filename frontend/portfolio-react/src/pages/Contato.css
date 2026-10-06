@@ -1,0 +1,162 @@
+.contato {
+  min-height: calc(100vh - 76px);
+  padding: 5rem 10%;
+}
+
+.contato-conteudo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+}
+
+.verde {
+  color: #0bd800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.contato-info h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.texto {
+  font-size: 1.1rem;
+  color: #a0a0a0;
+  line-height: 1.6;
+  max-width: 500px;
+  margin-bottom: 2rem;
+}
+
+.box1{
+  background-color:#131313;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.7rem 1rem;
+  line-height: 1rem;
+  width: 25rem;
+}
+.box2{
+  background-color:#000000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; 
+  border-width: 1px;
+  border-style: solid;
+  padding: 0.7rem;
+  margin-right: 1rem;
+  line-height: 1rem;
+  aspect-ratio: 1 / 1;
+}
+.g{
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.m{
+    font:menu;
+    font-size: 0.75rem;
+}
+.l{
+    font: medium;
+}
+
+.contato-info ul{
+    margin-top: 1rem;
+    display: flex;
+    list-style-type: none; 
+    margin-left: 3rem;
+    gap: 1rem; 
+    list-style-type: none; 
+}
+
+.box3{
+    background-color:#131313;
+    display: flex;
+    aspect-ratio: 1 / 1;
+    align-items: center;
+    justify-content: center;
+    border-width: 1px;
+    border-style: solid;
+    padding: 0.5rem; 
+    width: 4rem;
+}
+
+.contato-info a {
+  display: block;
+  width: fit-content;
+  color: #0bd800;
+  text-decoration: none;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.contato-info a:hover {
+  color: white;
+}
+
+.contato-form {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border: 1px solid #222;
+  background-color: #131313;
+  height: 35rem;
+}
+
+.nomemail {
+  display: flex;
+  gap: 50px;
+}
+
+.nomemail > div {
+  flex: 1;
+}
+
+.contato-form label {
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.5rem;
+  background-color: #0d0d0d;
+  border: 1px solid #333;
+  color: white;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.contato-form input:focus,
+.contato-form textarea:focus {
+  outline: none;
+  border-color: #0bd800;
+}
+
+.contato-form textarea {
+  resize: vertical;
+  height: 15rem;
+}
+
+.contato-form button {
+  width: fit-content;
+  padding: 0.9rem 1.8rem;
+  border: 2px solid #0bd800;
+  background-color: transparent;
+  color: #0bd800;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato-form button:hover {
+  background-color: #0bd800;
+  color: #070707;
+}

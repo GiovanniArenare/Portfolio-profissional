@@ -1,0 +1,75 @@
+.experiencias {
+  min-height: calc(100vh - 76px);
+  padding: 5rem 10%;
+}
+
+.experiencias-header {
+  margin-bottom: 5rem;
+}
+
+.experiencias-header p {
+  color: #0bd800;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.experiencias-header h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+
+.experiencias-header span {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+}
+
+.experiencias-timeline {
+  position: relative;
+  padding-left: 3rem;
+}
+
+.experiencias-timeline::before {
+  content: "";
+  position: absolute;
+  left: 0.5rem;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #0bd800;
+}
+
+.experiencia-card {
+  position: relative;
+  padding: 2rem;
+  border: 1px solid #222;
+  background-color: #0d0d0d;
+  margin-bottom: 3rem;
+}
+
+.experiencia-card::before {
+  content: "";
+  position: absolute;
+  left: -3rem;
+  top: 2rem;
+  width: 1rem;
+  height: 1rem;
+  background-color: #0bd800;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #0bd800;
+}
+
+.experiencia-data {
+  color: #0bd800;
+  font-size: 0.9rem;
+}
+
+.experiencia-card h2 {
+  font-size: 2rem;
+  margin: 0.8rem 0 1rem;
+}
+
+.experiencia-card p {
+  color: #a0a0a0;
+  line-height: 1.6;
+  max-width: 800px;
+}
