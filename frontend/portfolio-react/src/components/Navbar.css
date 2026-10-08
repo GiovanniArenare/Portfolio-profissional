@@ -3,7 +3,9 @@ nav {
   justify-content: center;
   gap: 15rem;
   padding: 1.5rem;
-  background-color: #070707;
+  z-index: 2;
+  position: relative;
+  z-index: 10;
 }
 
 nav a {

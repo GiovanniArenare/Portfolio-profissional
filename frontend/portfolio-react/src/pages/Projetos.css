@@ -19,11 +19,12 @@
 }
 
 .projetos-header span {
-    color: #a0a0a0;
+    color: #e4e4e4;
     font-size: 1.1rem;
 }
 
 .projetos-timeline {
+    margin-top: -3rem;
     position: relative;
 }
 
@@ -103,7 +104,8 @@
     top: 0;
     bottom: 0;
     width: 2px;
-    background-color: #0bd800;
+    background-color: #0dff00;
+    box-shadow: 0 0 10px #000000;
 }
 
 .projeto-card::before {
@@ -113,7 +115,7 @@
     top: 2rem;
     width: 1rem;
     height: 1rem;
-    background-color: #0bd800;
+    background-color: #0dff00;
     border-radius: 50%;
     box-shadow: 0 0 10px #0bd800;
 }

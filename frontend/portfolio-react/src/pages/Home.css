@@ -2,17 +2,31 @@
   min-height: calc(100vh - 76px);
   display: flex;
   align-items: center;
-  margin-left: 15rem;
   padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.home-content {
+max-width: 900px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
 }
 
 .foto-perfil {
-  border: #0bd800 solid 0.3rem;
+  position: relative;
+  z-index: 2;
   width: 25rem;
   height: 25rem;
-  margin-right: 5rem;
-  border-radius: 1rem;
+  margin-right: 0;
   overflow: hidden;
+  margin-bottom: 2rem;
+  border-radius: 50%;
 }
 
 .foto-perfil img {
@@ -21,19 +35,18 @@
   object-fit: cover;
 }
 
-.home-content {
-  max-width: 900px;
-}
-
 .home-content .greeting {
   color: #0bd800;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-family: Lucida Handwriting;
 }
 
 .home-content h1 {
   font-size: 5rem;
   margin-bottom: 1rem;
+  font-family: Lucida Handwriting;
+  
 }
 
 .home-content h2 {
@@ -45,7 +58,7 @@
 
 .home-content .description {
   max-width: 700px;
-  margin: 0 auto;
+  margin: 0 auto 2rem auto;
   color: #a0a0a0;
   line-height: 1.7;
   font-size: 1.1rem;
@@ -53,8 +66,9 @@
 
 .home-buttons {
   display: flex;
-  gap: 5rem;
-  margin-top: 2rem;
+  gap: 2rem; 
+  justify-content: center;
+  margin-top: -1rem;
 }
 
 .home-buttons a {

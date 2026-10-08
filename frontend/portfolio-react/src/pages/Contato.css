@@ -1,9 +1,13 @@
 .contato {
   min-height: calc(100vh - 76px);
   padding: 5rem 10%;
+  position: relative;
+  overflow: hidden;
 }
 
 .contato-conteudo {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 5rem;

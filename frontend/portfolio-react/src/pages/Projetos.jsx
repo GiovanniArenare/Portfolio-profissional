@@ -3,10 +3,23 @@ import "./Projetos.css";
 import VibeHub from "../assets/vibehub.png";
 import Game_python from "../assets/sonica.png";
 import Login from "../assets/login.png";
+import FloatingLines from "../components/FloatingLines";
 
 function Projetos() {
   return (
     <main className="projetos">
+        <FloatingLines
+          enabledWaves={["top", "middle", "bottom"]}
+          lineCount={6}
+          lineDistance={8}
+          bendRadius={8}
+          bendStrength={-2}
+          interactive={false}
+          parallax={true}
+          animationSpeed={0.8}
+          linesGradient={["#0bd800", "#080808", "#044b00"]}
+        />
+
       <section className="projetos-header">
         <p>Meu trabalho</p>
 

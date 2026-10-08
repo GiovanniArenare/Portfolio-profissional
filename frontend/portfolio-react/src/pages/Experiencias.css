@@ -1,10 +1,13 @@
 .experiencias {
+  position: relative;
   min-height: calc(100vh - 76px);
   padding: 5rem 10%;
+  overflow: hidden;
 }
 
-.experiencias-header {
-  margin-bottom: 5rem;
+.experiencias-conteudo {
+  position: relative;
+  z-index: 1;
 }
 
 .experiencias-header p {
@@ -19,11 +22,12 @@
 }
 
 .experiencias-header span {
-  color: #a0a0a0;
+  color: #e4e4e4;
   font-size: 1.1rem;
 }
 
 .experiencias-timeline {
+  margin-top: 2rem;
   position: relative;
   padding-left: 3rem;
 }
@@ -35,7 +39,8 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background-color: #0bd800;
+    background-color: #0dff00;
+    box-shadow: 0 0 10px #000000;
 }
 
 .experiencia-card {
@@ -53,7 +58,7 @@
   top: 2rem;
   width: 1rem;
   height: 1rem;
-  background-color: #0bd800;
+  background-color: #0dff00;
   border-radius: 50%;
   box-shadow: 0 0 10px #0bd800;
 }
