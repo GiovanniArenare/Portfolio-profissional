@@ -1,0 +1,26 @@
+
+# Segredos e variáveis de ambiente
+.env
+.env.*
+!.env.example
+
+# Configurações locais do Spring
+application-local.properties
+
+# VS Code
+.vscode/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados pelo Java e Maven
+**/target/
+*.class
+
+# Dependências e builds do frontend
+**/node_modules/
+**/dist/
+
+# Logs
+*.log

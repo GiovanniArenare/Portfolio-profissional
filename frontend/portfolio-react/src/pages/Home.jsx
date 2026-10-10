@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import "./Home.css";
-import fotoPerfil from "../assets/foto-perfil.jpeg";
 import foto from "../assets/foto03.png";
 import WebThreads from '../components/WebThreads';
+
 
 function Home() {
     return (
@@ -51,8 +51,11 @@ function Home() {
                     <div className="home-buttons">
                         <Link to="/projetos">Ver projetos</Link>
                         <Link to="/contato">Entrar em contato</Link>
+                        
                     </div>
+
                 </section>
+
             </main>
         </>
     );
