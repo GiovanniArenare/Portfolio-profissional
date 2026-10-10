@@ -1,7 +1,7 @@
 import ProjetoCard from "../components/ProjetoCard";
 import "./Projetos.css";
 import VibeHub from "../assets/vibehub.png";
-import Game_python from "../assets/sonica.png";
+import Game_python from "../assets/Sonica.png";
 import Login from "../assets/login.png";
 import FloatingLines from "../components/FloatingLines";
 
