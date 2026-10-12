@@ -8,7 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://portfolio-profissional-kv0plohn3-arenare.vercel.app"
+})
 @RequestMapping("/api/mensagens")
 public class MensagemController {
 

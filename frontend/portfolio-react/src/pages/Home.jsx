@@ -45,7 +45,7 @@ function Home() {
 
                     <p className="description">
                         Tenho interesse
-                        em desenvolvimento de aplicações e tecnologia!
+                        em desenvolvimento de aplicações e tecnologia.
                     </p>
 
                     <div className="home-buttons">
