@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @CrossOrigin(origins = {
     "http://localhost:5173",
-    "https://portfolio-profissional-kv0plohn3-arenare.vercel.app",
+    "https://arenare.vercel.app",
     "https://portfolio-profissional-brown.vercel.app",
     "https://portfolio-profissional-arenare.vercel.app"
 })
