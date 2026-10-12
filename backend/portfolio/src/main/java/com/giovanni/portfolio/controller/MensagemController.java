@@ -11,7 +11,8 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = {
     "http://localhost:5173",
     "https://portfolio-profissional-kv0plohn3-arenare.vercel.app",
-    "https://portfolio-profissional-brown.vercel.app"
+    "https://portfolio-profissional-brown.vercel.app",
+    "https://portfolio-profissional-arenare.vercel.app"
 })
 @RequestMapping("/api/mensagens")
 public class MensagemController {
