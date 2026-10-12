@@ -13,6 +13,7 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import Topography from "../components/Topography";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Contato() {
   const [form, setForm] = useState({
@@ -41,9 +42,7 @@ function Contato() {
     setStatus("");
 
     try {
-      const resposta = await fetch(
-        "http://localhost:8080/api/mensagens",
-        {
+      const resposta = await fetch(`${API_URL}/api/mensagens`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
