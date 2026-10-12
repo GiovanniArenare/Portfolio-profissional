@@ -9,17 +9,25 @@ export default function WakaTime() {
   const [erro, setErro] = useState(false);
 
   useEffect(() => {
-    fetch(API_URL)
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Erro ao buscar estatísticas");
-        }
+  fetch(API_URL)
+    .then(async (response) => {
+      if (!response.ok) {
+        throw new Error(`Erro HTTP: ${response.status}`);
+      }
 
-        return response.json();
-      })
-      .then((json) => setStats(json.data))
-      .catch(() => setErro(true));
-  }, []);
+      return response.json();
+    })
+    .then((json) => {
+      console.log("Resposta da API:", json);
+      console.log("Estatísticas:", json.data);
+
+      setStats(json.data);
+    })
+    .catch((erro) => {
+      console.error("Falha no WakaTime:", erro);
+      setErro(true);
+    });
+}, []);
 
   if (erro) {
     return (
