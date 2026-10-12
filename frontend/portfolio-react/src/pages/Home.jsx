@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import foto from "../assets/foto03.png";
 import WebThreads from '../components/WebThreads';
+import WakaTime from "../components/WakaTime";
 
 
 function Home() {
@@ -55,6 +56,8 @@ function Home() {
                     </div>
 
                 </section>
+
+                <WakaTime />
 
             </main>
         </>

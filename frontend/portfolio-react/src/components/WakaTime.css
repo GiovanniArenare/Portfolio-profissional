@@ -1,0 +1,122 @@
+
+.wakatime-section {
+  width: 100%;
+  padding: 4rem 2rem;
+  color: #fff;
+  background: #070707;
+  box-sizing: border-box;
+}
+
+.wakatime-section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.wakatime-section h2 span {
+  color: #0bd800;
+}
+
+.wakatime-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.wakatime-card {
+  padding: 1.75rem;
+  background: #101010;
+  border: 1px solid #252525;
+  border-radius: 14px;
+  box-shadow: 0 0 20px #0bd80008;
+}
+
+.wakatime-label {
+  color: #aaa;
+  font-size: 0.95rem;
+  margin: 0 0 1rem;
+}
+
+.wakatime-card h3 {
+  color: #0bd800;
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.wakatime-description {
+  color: #777;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+
+.wakatime-languages {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.wakatime-language-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.wakatime-language-info span:last-child {
+  color: #0bd800;
+}
+
+.wakatime-bar {
+  width: 100%;
+  height: 7px;
+  overflow: hidden;
+  background: #292929;
+  border-radius: 10px;
+}
+
+.wakatime-bar-fill {
+  height: 100%;
+  background: #0bd800;
+  border-radius: 10px;
+  transition: width 0.4s ease;
+}
+
+.wakatime-footer {
+  margin-top: 1.5rem;
+  text-align: center;
+  color: #777;
+  font-size: 0.8rem;
+}
+
+.wakatime-footer a {
+  color: #0bd800;
+  text-decoration: none;
+}
+
+.wakatime-footer a:hover {
+  text-decoration: underline;
+}
+
+.wakatime-loading,
+.wakatime-erro {
+  color: #aaa;
+  text-align: center;
+  padding: 2rem;
+}
+
+@media (max-width: 700px) {
+  .wakatime-section {
+    padding: 3rem 1rem;
+  }
+
+  .wakatime-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .wakatime-card h3 {
+    font-size: 2rem;
+  }
+}
