@@ -10,11 +10,7 @@ import org.springframework.web.client.RestClient;
 @RequestMapping("/api/wakatime")
 public class WakaTimeController {
 
-    private final RestClient restClient;
-
-    public WakaTimeController(RestClient.Builder builder) {
-        this.restClient = builder.build();
-    }
+    private final RestClient restClient = RestClient.create();
 
     @GetMapping
     public JsonNode buscarEstatisticas() {
