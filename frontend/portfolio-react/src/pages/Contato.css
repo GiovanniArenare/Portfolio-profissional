@@ -164,3 +164,88 @@
   background-color: #0bd800;
   color: #070707;
 }
+
+@media (max-width: 770px) {
+  .contato {
+    padding: 2.5rem 5%;
+  }
+
+  .contato-conteudo {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contato-info h1 {
+    font-size: clamp(2.3rem, 8vw, 3rem);
+  }
+
+  .verde {
+    font-size: 1rem;
+  }
+
+  .texto {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .box1 {
+    width: 380px;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-width: 0;
+  }
+
+  .box2 {
+    flex-shrink: 0;
+    margin-right: 0;
+  }
+
+  .g {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .contato-info ul {
+    margin-left: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+  }
+
+  .box3 {
+    width: 3rem;
+    box-sizing: border-box;
+  }
+
+  .contato-info a {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+
+  .contato-form {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    height: auto;
+  }
+
+  .nomemail {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .nomemail > div {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .contato-form input,
+  .contato-form textarea {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .contato-form textarea {
+    height: 12rem;
+  }
+}

@@ -6,4 +6,7 @@
   height: 100%;
   z-index: -1; 
   pointer-events: none;
+  overflow: hidden;
+  max-width: 100%;
+  box-sizing: border-box;
 }

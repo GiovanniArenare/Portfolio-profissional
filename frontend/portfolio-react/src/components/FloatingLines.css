@@ -9,3 +9,10 @@
   pointer-events: none;
   background-color: #000000;
 }
+
+@media (max-width: 770px) {
+  .floating-lines-container {
+    height: 100%;
+    overflow: hidden;
+  }
+}

@@ -85,3 +85,39 @@ max-width: 900px;
   background-color: #0bd800;
   color: #070707;
 }
+
+@media (max-width: 770px) {
+  .home {
+    min-height: calc(100vh - 76px);
+    padding: 3rem 1.5rem;
+  }
+
+  .foto-perfil {
+    width: 18rem;
+    height: 18rem;
+    max-width: 80vw;
+    max-height: 80vw;
+  }
+
+  .home-content h1 {
+    font-size: clamp(2.2rem, 8vw, 4rem);
+    overflow-wrap: anywhere;
+  }
+
+  .home-content .greeting {
+    font-size: 1.3rem;
+  }
+
+  .home-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .home-content .description {
+    font-size: 1rem;
+  }
+
+  .home-buttons {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}

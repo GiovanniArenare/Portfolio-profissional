@@ -78,3 +78,49 @@
   line-height: 1.6;
   max-width: 800px;
 }
+
+@media (max-width: 770px) {
+  .experiencias {
+    padding: 3rem 5%;
+  }
+
+  .experiencias-header {
+    margin-bottom: 2rem;
+  }
+
+  .experiencias-header h1 {
+    font-size: clamp(2.5rem, 7vw, 3.5rem);
+  }
+
+  .experiencias-header p {
+    font-size: 1.1rem;
+  }
+
+  .experiencias-header span {
+    font-size: 1rem;
+    line-height: 1.6;
+    display: block;
+  }
+
+  .experiencias-timeline {
+    padding-left: 2.5rem;
+  }
+
+  .experiencia-card {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .experiencia-card::before {
+    left: -2.5rem;
+    top: 1.8rem;
+  }
+
+  .experiencia-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .experiencia-card p {
+    font-size: 1rem;
+  }
+}
