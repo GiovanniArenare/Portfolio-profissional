@@ -1,9 +1,20 @@
+import { useLanguage } from "./LanguageContext";
+
 function ProjetoCard({ ano, nome, descricao, tecnologias, github, imagem }) {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   return (
     <article className="projeto-card">
-
       <div className="projeto-imagem">
-        <img src={imagem} alt={`Imagem do projeto ${nome}`} />
+        <img
+          src={imagem}
+          alt={
+            isEnglish
+              ? `Image of the ${nome} project`
+              : `Imagem do projeto ${nome}`
+          }
+        />
       </div>
 
       <div className="projeto-info">
@@ -20,10 +31,9 @@ function ProjetoCard({ ano, nome, descricao, tecnologias, github, imagem }) {
         </div>
 
         <a href={github} target="_blank" rel="noreferrer">
-          Ver no GitHub →
+          {isEnglish ? "View on GitHub →" : "Ver no GitHub →"}
         </a>
       </div>
-
     </article>
   );
 }

@@ -1,46 +1,51 @@
 import ExperienciaCard from "../components/ExperienciaCard";
 import "./Experiencias.css";
-import FloatingLines from "../components/FloatingLines";
+import SquareBackground from "../components/SquareBackground";
+import { useLanguage } from "../components/LanguageContext";
 
 function Experiencias() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   return (
     <main className="experiencias">
-        <FloatingLines
-          enabledWaves={["top", "middle", "bottom"]}
-          lineCount={6}
-          lineDistance={8}
-          bendRadius={8}
-          bendStrength={-2}
-          interactive={false}
-          parallax={true}
-          animationSpeed={0.8}
-          linesGradient={["#0bd800", "#080808", "#044b00"]}
-        />
+      <SquareBackground />
 
       <div className="experiencias-conteudo">
-
         <section className="experiencias-header">
-          <p>Minha trajetória</p>
+          <p>
+            {isEnglish ? "My Journey" : "Minha trajetória"}
+          </p>
 
-          <h1>Experiências</h1>
+          <h1>
+            {isEnglish ? "Experience" : "Experiências"}
+          </h1>
 
           <span>
-            Minha formação e experiências no desenvolvimento de projetos.
+            {isEnglish
+              ? "My education and experience developing projects."
+              : "Minha formação e experiências no desenvolvimento de projetos."}
           </span>
         </section>
 
         <section className="experiencias-timeline">
-
           <ExperienciaCard
-            periodo="2026 – Atualmente"
-            titulo="Engenharia de Software — Puc Minas"
-            descricao="Formação em Engenharia de Software, com estudos em programação, desenvolvimento web, banco de dados, engenharia de software e desenvolvimento de sistemas."
+            periodo={
+              isEnglish ? "2026 – Present" : "2026 – Atualmente"
+            }
+            titulo={
+              isEnglish
+                ? "Software Engineering — PUC Minas"
+                : "Engenharia de Software — PUC Minas"
+            }
+            descricao={
+              isEnglish
+                ? "Software Engineering studies focused on programming, web development, databases, software engineering, and systems development."
+                : "Formação em Engenharia de Software, com estudos em programação, desenvolvimento web, banco de dados, engenharia de software e desenvolvimento de sistemas."
+            }
           />
-
         </section>
-
       </div>
-
     </main>
   );
 }

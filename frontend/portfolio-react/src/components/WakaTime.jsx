@@ -1,67 +1,95 @@
 import { useEffect, useState } from "react";
 import "./WakaTime.css";
+import { useLanguage } from "./LanguageContext";
 
 const API_URL =
   "https://portfolio-profissional-api.onrender.com/api/wakatime";
 
 export default function WakaTime() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   const [stats, setStats] = useState(null);
   const [erro, setErro] = useState(false);
 
   useEffect(() => {
-  fetch(API_URL)
-    .then(async (response) => {
-      if (!response.ok) {
-        throw new Error(`Erro HTTP: ${response.status}`);
-      }
+    fetch(API_URL)
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error: ${response.status}`);
+        }
 
-      return response.json();
-    })
-    .then((json) => {
-      console.log("Resposta da API:", json);
-      console.log("Estatísticas:", json.data);
+        return response.json();
+      })
+      .then((json) => {
+        console.log("API response:", json);
+        console.log("Statistics:", json.data);
 
-      setStats(json.data);
-    })
-    .catch((erro) => {
-      console.error("Falha no WakaTime:", erro);
-      setErro(true);
-    });
-}, []);
+        setStats(json.data);
+      })
+      .catch((erro) => {
+        console.error("WakaTime error:", erro);
+        setErro(true);
+      });
+  }, []);
 
   if (erro) {
     return (
       <p className="wakatime-erro">
-        Não foi possível carregar as estatísticas.
+        {isEnglish
+          ? "Unable to load statistics."
+          : "Não foi possível carregar as estatísticas."}
       </p>
     );
   }
 
   if (!stats) {
-    return <p className="wakatime-loading">Carregando estatísticas...</p>;
+    return (
+      <p className="wakatime-loading">
+        {isEnglish
+          ? "Loading statistics..."
+          : "Carregando estatísticas..."}
+      </p>
+    );
   }
 
   return (
     <section className="wakatime-section">
       <h2>
-        Estatísticas <span>WakaTime</span>
+        {isEnglish ? "Statistics" : "Estatísticas"}{" "}
+        <span>WakaTime</span>
       </h2>
 
       <div className="wakatime-cards">
         <article className="wakatime-card">
-          <p className="wakatime-label">Tempo total programando</p>
+          <p className="wakatime-label">
+            {isEnglish
+              ? "Total coding time"
+              : "Tempo total programando"}
+          </p>
+
           <h3>{stats.human_readable_total}</h3>
+
           <p className="wakatime-description">
-            Tempo registrado pelo WakaTime
+            {isEnglish
+              ? "Time tracked by WakaTime"
+              : "Tempo registrado pelo WakaTime"}
           </p>
         </article>
 
         <article className="wakatime-card">
-          <p className="wakatime-label">Linguagens mais utilizadas</p>
+          <p className="wakatime-label">
+            {isEnglish
+              ? "Most used languages"
+              : "Linguagens mais utilizadas"}
+          </p>
 
           <div className="wakatime-languages">
             {stats.languages.slice(0, 5).map((linguagem) => (
-              <div className="wakatime-language" key={linguagem.name}>
+              <div
+                className="wakatime-language"
+                key={linguagem.name}
+              >
                 <div className="wakatime-language-info">
                   <span>{linguagem.name}</span>
                   <span>{linguagem.percent.toFixed(1)}%</span>
@@ -70,7 +98,9 @@ export default function WakaTime() {
                 <div className="wakatime-bar">
                   <div
                     className="wakatime-bar-fill"
-                    style={{ width: `${linguagem.percent}%` }}
+                    style={{
+                      width: `${linguagem.percent}%`,
+                    }}
                   />
                 </div>
               </div>
@@ -80,7 +110,8 @@ export default function WakaTime() {
       </div>
 
       <p className="wakatime-footer">
-        Dados fornecidos por{" "}
+        {isEnglish ? "Data provided by " : "Dados fornecidos por "}
+
         <a
           href="https://wakatime.com/@782aa992-c7ba-4ff2-8e6e-3d0ce6762442"
           target="_blank"

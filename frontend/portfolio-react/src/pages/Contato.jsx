@@ -1,5 +1,5 @@
-
 import { useState } from "react";
+import Topologia from "../components/Topologia";
 import "./Contato.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,10 +12,14 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
-import Topography from "../components/Topography";
+import { useLanguage } from "../components/LanguageContext";
+
 const API_URL = import.meta.env.VITE_API_URL;
 
 function Contato() {
+  const { language } = useLanguage();
+  const isEnglish = language === "en";
+
   const [form, setForm] = useState({
     nome: "",
     email: "",
@@ -43,24 +47,27 @@ function Contato() {
 
     try {
       const resposta = await fetch(`${API_URL}/api/mensagens`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            nome: form.nome,
-            email: form.email,
-            assunto: form.assunto,
-            conteudo: form.mensagem,
-          }),
-        }
-      );
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          nome: form.nome,
+          email: form.email,
+          assunto: form.assunto,
+          conteudo: form.mensagem,
+        }),
+      });
 
       if (!resposta.ok) {
-        throw new Error("Não foi possível enviar a mensagem.");
+        throw new Error("Failed to send message.");
       }
 
-      setStatus("Mensagem enviada com sucesso!");
+      setStatus(
+        isEnglish
+          ? "Message sent successfully!"
+          : "Mensagem enviada com sucesso!"
+      );
 
       setForm({
         nome: "",
@@ -70,7 +77,9 @@ function Contato() {
       });
     } catch {
       setStatus(
-        "Não foi possível enviar sua mensagem. Tente novamente."
+        isEnglish
+          ? "Unable to send your message. Please try again."
+          : "Não foi possível enviar sua mensagem. Tente novamente."
       );
     } finally {
       setEnviando(false);
@@ -79,47 +88,34 @@ function Contato() {
 
   return (
     <>
-      <Topography
-        lowColor="#0bd800"
-        midColor="#044b00"
-        highColor="#98f398"
-        speed={0.35}
-        morphAmount={2}
-        morphSpeed={0.06}
-        bands={1}
-        thickness={0.01}
-        scale={3}
-        pixelSize={1}
-        glow={1.6}
-        colorMode="elevation"
-        contrast={3}
-        brightness={1}
-        fillBands={false}
-        opacity={1}
-        grain
-        grainIntensity={0.05}
-        mouseInteraction={false}
-        mouseRadius={0.3}
-        mouseStrength={0.4}
-      />
+      <Topologia />
 
       <main className="contato">
         <section className="contato-conteudo">
           <div className="contato-info">
-            <p className="verde">Vamos conversar</p>
-
-            <h1>Entre em contato</h1>
-
-            <p className="texto">
-              Entre em contato comigo através das minhas redes ou envie uma mensagem.
+            <p className="verde">
+              {isEnglish ? "Let's talk" : "Vamos conversar"}
             </p>
 
-            <a href="mailto:giovanniarenaramota@gmail.com"
-              aria-label="E-mail">
+            <h1>
+              {isEnglish ? "Get in touch" : "Entre em contato"}
+            </h1>
+
+            <p className="texto">
+              {isEnglish
+                ? "Contact me through my social media or send me a message."
+                : "Entre em contato comigo através das minhas redes ou envie uma mensagem."}
+            </p>
+
+            <a
+              href="mailto:giovanniarenaramota@gmail.com"
+              aria-label="E-mail"
+            >
               <div className="box1">
                 <div className="box2">
                   <FontAwesomeIcon icon={faEnvelope} />
                 </div>
+
                 <div className="g">
                   <span className="m">E-MAIL</span>
                   <span className="l">
@@ -130,15 +126,18 @@ function Contato() {
             </a>
 
             <a>
-              <div className="box1">
-                <div className="box2">
-                  <FontAwesomeIcon icon={faLocationDot} />
-                </div>
-                <div className="g">
-                  <span className="m">LOCALIZAÇÃO</span>
-                  <span className="l">Contagem, Brasil</span>
-                </div>
+            <div className="box1">
+              <div className="box2">
+                <FontAwesomeIcon icon={faLocationDot} />
               </div>
+
+              <div className="g">
+                <span className="m">
+                  {isEnglish ? "LOCATION" : "LOCALIZAÇÃO"}
+                </span>
+                <span className="l">Contagem, Brasil</span>
+              </div>
+            </div>
             </a>
 
             <ul>
@@ -196,19 +195,20 @@ function Contato() {
             </ul>
           </div>
 
-          <form
-            className="contato-form"
-            onSubmit={handleSubmit}
-          >
+          <form className="contato-form" onSubmit={handleSubmit}>
             <div className="nomemail">
               <div>
-                <label htmlFor="nome">Nome</label>
+                <label htmlFor="nome">
+                  {isEnglish ? "Name" : "Nome"}
+                </label>
 
                 <input
                   type="text"
                   id="nome"
                   name="nome"
-                  placeholder="Seu nome completo"
+                  placeholder={
+                    isEnglish ? "Your full name" : "Seu nome completo"
+                  }
                   value={form.nome}
                   onChange={handleChange}
                   maxLength={100}
@@ -223,7 +223,11 @@ function Contato() {
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="seuemail@email.com"
+                  placeholder={
+                    isEnglish
+                      ? "youremail@email.com"
+                      : "seuemail@email.com"
+                  }
                   value={form.email}
                   onChange={handleChange}
                   maxLength={150}
@@ -232,25 +236,35 @@ function Contato() {
               </div>
             </div>
 
-            <label htmlFor="assunto">Assunto</label>
+            <label htmlFor="assunto">
+              {isEnglish ? "Subject" : "Assunto"}
+            </label>
 
             <input
               type="text"
               id="assunto"
               name="assunto"
-              placeholder="Do que se trata?"
+              placeholder={
+                isEnglish ? "What is it about?" : "Do que se trata?"
+              }
               value={form.assunto}
               onChange={handleChange}
               maxLength={150}
               required
             />
 
-            <label htmlFor="mensagem">Mensagem</label>
+            <label htmlFor="mensagem">
+              {isEnglish ? "Message" : "Mensagem"}
+            </label>
 
             <textarea
               id="mensagem"
               name="mensagem"
-              placeholder="Escreva sua mensagem..."
+              placeholder={
+                isEnglish
+                  ? "Write your message..."
+                  : "Escreva sua mensagem..."
+              }
               rows="6"
               value={form.mensagem}
               onChange={handleChange}
@@ -265,7 +279,13 @@ function Contato() {
             )}
 
             <button type="submit" disabled={enviando}>
-              {enviando ? "Enviando..." : "Enviar mensagem"}
+              {enviando
+                ? isEnglish
+                  ? "Sending..."
+                  : "Enviando..."
+                : isEnglish
+                  ? "Send message"
+                  : "Enviar mensagem"}
             </button>
           </form>
         </section>

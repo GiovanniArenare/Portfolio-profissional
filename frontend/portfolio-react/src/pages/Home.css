@@ -1,123 +1,196 @@
 .home {
   min-height: calc(100vh - 76px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 4rem 2rem;
+  box-sizing: border-box;
   position: relative;
+  padding: 3rem 0;
+  padding-left: 14%;
+  padding-bottom: 0;
   overflow: hidden;
-  justify-content: center;
-  
 }
 
 .home-content {
-max-width: 900px;
+  width: 100%;
+  max-width: 1250px;
+  margin: auto 0;
+  padding: 4rem 0;
   position: relative;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  align-items: center; 
-  text-align: center;
-}
-
-.foto-perfil {
-  position: relative;
-  z-index: 2;
-  width: 25rem;
-  height: 25rem;
-  margin-right: 0;
-  overflow: hidden;
-  margin-bottom: 2rem;
-  border-radius: 50%;
-}
-
-.foto-perfil img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  align-items: flex-start;
+  text-align: left;
 }
 
 .home-content .greeting {
-  color: #0bd800;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  font-family: Lucida Handwriting;
+  color: #bdbdbd;
+  font-size: 1.8rem;
+  margin: 0 0 0.8rem;
 }
 
 .home-content h1 {
-  font-size: 5rem;
-  margin-bottom: 1rem;
-  font-family: Lucida Handwriting;
-  
+  color: #f2f2f2;
+  font-size: clamp(5rem, 9vw, 8rem);
+  line-height: 1.05;
+  letter-spacing: -4px;
+  margin: 0 0 1.5rem;
+  overflow-wrap: anywhere;
 }
 
 .home-content h2 {
-  font-size: 1.8rem;
-  font-weight: normal;
-  color: #bdbdbd;
-  margin-bottom: 2rem;
+  font-size: clamp(1.6rem, 2.5vw, 2.3rem);
+  font-weight: 400;
+  color: #0bd800;
+  margin: 0 0 1.5rem;
+  padding-top: 18px;
+  border-top: 2px solid #0bd800;
 }
 
 .home-content .description {
-  max-width: 700px;
-  margin: 0 auto 2rem auto;
+  max-width: 750px;
+  margin: 0 0 2.5rem;
   color: #a0a0a0;
-  line-height: 1.7;
-  font-size: 1.1rem;
+  line-height: 1.9;
+  font-size: 1.3rem;
 }
 
 .home-buttons {
   display: flex;
-  gap: 2rem; 
-  justify-content: center;
-  margin-top: -1rem;
+  gap: 1.3rem;
+  flex-wrap: wrap;
 }
 
 .home-buttons a {
-  padding: 0.8rem 1.5rem;
-  border: 2px solid #0bd800;
+  padding: 1.1rem 2rem;
+  border: 1px solid #0bd800;
   color: #0bd800;
+  font-size: 1.1rem;
   text-decoration: none;
   transition: 0.3s;
 }
 
+.home-buttons a:first-child,
 .home-buttons a:hover {
   background-color: #0bd800;
   color: #070707;
 }
 
+.home-buttons a:first-child:hover {
+  background-color: transparent;
+  color: #0bd800;
+}
+
+.home-wakatime {
+  margin-top: 2rem;
+  max-width: 100%;
+}
+
+.home-footer {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-top: 1px solid #202020;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-profile img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #0bd800;
+}
+
+.footer-profile div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.footer-profile strong {
+  color: #f2f2f2;
+  font-size: 1.1rem;
+}
+
+.footer-profile span,
+.footer-copy {
+  color: #777;
+  font-size: 0.95rem;
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-socials a {
+  color: #888;
+  font-size: 1.6rem;
+  transition: 0.3s;
+}
+
+.footer-socials a:hover {
+  color: #0bd800;
+  transform: translateY(-3px);
+}
+
 @media (max-width: 770px) {
   .home {
+    padding: 5rem 1.5rem 0;
     min-height: calc(100vh - 76px);
-    padding: 3rem 1.5rem;
   }
 
-  .foto-perfil {
-    width: 18rem;
-    height: 18rem;
-    max-width: 80vw;
-    max-height: 80vw;
-  }
-
-  .home-content h1 {
-    font-size: clamp(2.2rem, 8vw, 4rem);
-    overflow-wrap: anywhere;
+  .home-content {
+    padding: 3rem 0;
   }
 
   .home-content .greeting {
     font-size: 1.3rem;
   }
 
+  .home-content h1 {
+    font-size: clamp(3rem, 12vw, 5rem);
+    letter-spacing: -1.5px;
+  }
+
   .home-content h2 {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 
   .home-content .description {
+    font-size: 1.05rem;
+  }
+
+  .home-buttons a {
+    padding: 0.9rem 1.3rem;
     font-size: 1rem;
   }
 
-  .home-buttons {
-    gap: 1rem;
+  .home-footer {
+    justify-content: center;
+
     flex-wrap: wrap;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+
+  .footer-socials {
+    gap: 1.3rem;
+  }
+
+  .footer-copy {
+    width: 100%;
+    text-align: center;
   }
 }

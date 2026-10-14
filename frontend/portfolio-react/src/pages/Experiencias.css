@@ -1,13 +1,16 @@
 .experiencias {
-  position: relative;
   min-height: calc(100vh - 76px);
-  padding: 5rem 10%;
-  overflow: hidden;
+  padding: 1rem 10%;
+  position: relative;
+  isolation: isolate;
+  min-height: 100vh;
+  background-color: #070707;
 }
 
 .experiencias-conteudo {
   position: relative;
   z-index: 1;
+  margin-bottom: 5rem;
 }
 
 .experiencias-header p {

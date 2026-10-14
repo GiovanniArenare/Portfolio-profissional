@@ -1,10 +1,16 @@
 .projetos {
     min-height: calc(100vh - 76px);
-    padding: 5rem 10%;
+    padding: 1rem 10%;
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    background-color: #070707;
 }
 
 .projetos-header {
     margin-bottom: 5rem;
+    position: relative;
+    z-index: 1;
 }
 
 .projetos-header p {
